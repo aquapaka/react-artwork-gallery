@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Home() {
   return (
     <div
@@ -9,7 +11,7 @@ export default function Home() {
         Immerse yourself in captivating masterpieces, engage with talented
         artists, and find inspiration that transcends boundaries.
       </p>
-      <button className="primary-button mt-4">View gallery</button>
+      <Link to="/gallery" className="primary-button mt-4">View gallery</Link>
     </div>
   );
 }

@@ -10,7 +10,7 @@ import bgImage from "./assets/images/cozy-room.jpg";
 function App() {
   return (
     <div id="App" className="w-full h-screen">
-      <img className="fixed h-full object-cover -z-10 blur brightness-50" src={bgImage} alt="bg" />
+      {/* <img className="fixed h-full object-cover -z-10 blur brightness-50" src={bgImage} alt="bg" /> */}
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

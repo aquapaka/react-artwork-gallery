@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply text-neutral-100 bg-black
+    @apply text-fuchsia-500 bg-black
   }
   h1 {
     @apply text-3xl font-bold
@@ -13,7 +13,7 @@
 
 @layer components {
   .primary-button {
-    @apply border border-neutral-100 py-1 px-6 shadow bg-white bg-opacity-10 hover:bg-opacity-20 hover:scale-110 active:bg-opacity-5 active:scale-95 duration-200
+    @apply border border-fuchsia-500 py-1 px-6 shadow bg-black bg-opacity-10 hover:bg-opacity-20 hover:scale-110 active:bg-opacity-5 active:scale-95 duration-200
   }
 }
 
