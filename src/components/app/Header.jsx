@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0">
-      <nav className="flex justify-between items-center px-6 py-4">
+      <nav className="flex justify-between items-center px-6">
         <div>
-            <h1>Artopus</h1>
+            <Link to='/'><h1>Artopus</h1></Link>
         </div>
         <ul className="flex gap-4">
           <li>

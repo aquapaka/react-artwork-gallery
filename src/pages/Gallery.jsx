@@ -15,19 +15,25 @@ export default function Gallery() {
       .then((response) => {
         setArtworks(response.data);
         setLoading(false);
-      }).catch((error) => {
-        console.log(error);
       })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   return (
     <div id="Gallery" className="pt-20">
-      <div className="container mx-auto px-4 grid grid-cols-3 gap-4">
-        {!isLoading && artworks.map(artwork => <ArtworkButton artwork={artwork} />)}
-      </div>
-      <div className="w-full h-[70vh] flex justify-center items-center">
-        {isLoading && <HashLoader color="#d946ef" />}
-      </div>
+      {isLoading ? (
+        <div className="w-full h-[70vh] flex justify-center items-center">
+          <HashLoader color="#d946ef" />
+        </div>
+      ) : (
+        <div className="container mx-auto px-4 grid md:grid-cols-3 xl:grid-cols-4 gap-4">
+          {artworks.map((artwork) => (
+            <ArtworkButton artwork={artwork} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
