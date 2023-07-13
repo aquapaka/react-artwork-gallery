@@ -11,6 +11,9 @@
   h1 {
     @apply text-3xl font-bold
   }
+  h2 {
+    @apply text-2xl font-bold
+  }
   a {
     @apply p-4 inline-block hover:scale-105 hover:brightness-110 active:scale-100 active:brightness-100 duration-100
   }

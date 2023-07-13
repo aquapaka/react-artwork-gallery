@@ -13,7 +13,7 @@ export default function Login({ setLogin }) {
   };
 
   return (
-    <div id="login" className="pt-16 min-h-screen">
+    <div id="login" className="pt-16 min-h-screen flex justify-center items-center">
       login
       <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
     </div>
