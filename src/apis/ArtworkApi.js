@@ -11,6 +11,14 @@ const ArtworkApi = {
       headers: { "content-type": "application/json" },
     });
   },
+  addArtwork(artwork) {
+    return axios.post(BASE_URL + 'artwork', JSON.stringify(artwork), {
+      headers: { "content-type": "application/json" },
+    });
+  },
+  deleteArtwork(id) {
+    return axios.delete(BASE_URL + `artwork/${id}`);
+  }
 };
 
 export default ArtworkApi;

@@ -44,6 +44,18 @@ export default function Manage() {
       });
   };
 
+  const deleteSelectedArtwork = () => {
+    ArtworkApi.deleteSelectedArtwork(selectedArtwork.id)
+      .then((response) => {
+        console.log(response);
+        setSelectedArtwork(null);
+        triggerReload(state => !state)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   useEffect(() => {
     setLoading(true);
 
@@ -131,6 +143,12 @@ export default function Manage() {
                 <button
                   className="primary-button border-blue-500 text-blue-500 bg-blue-900 bg-opacity-50 w-full mt-4"
                   onClick={() => updateSelectedArtworkInformation()}
+                >
+                  Update information
+                </button>
+                <button
+                  className="primary-button border-red-500 text-red-500 bg-red-900 bg-opacity-50 w-full mt-4"
+                  onClick={() => deleteSelectedArtwork()}
                 >
                   Update information
                 </button>
