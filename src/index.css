@@ -17,11 +17,17 @@
   a {
     @apply p-4 inline-block hover:scale-105 hover:brightness-110 active:scale-100 active:brightness-100 duration-100
   }
+  label {
+    @apply block
+  }
+  input, textarea {
+    @apply px-2 py-1 bg-black text-blue-500 outline-none ring-1 ring-blue-900 hover:ring-blue-800 focus:ring-blue-500
+  }
 }
 
 @layer components {
   .primary-button {
-    @apply border border-fuchsia-300 py-1 px-6 shadow bg-black bg-opacity-10 hover:bg-opacity-20 hover:scale-110 hover:bg-fuchsia-500 active:bg-opacity-5 active:scale-95 duration-100
+    @apply block border border-fuchsia-300 py-1 px-6 shadow bg-black bg-opacity-10 hover:bg-opacity-20 hover:scale-110 hover:bg-fuchsia-500 active:bg-opacity-5 active:scale-95 duration-100
   }
 }
 

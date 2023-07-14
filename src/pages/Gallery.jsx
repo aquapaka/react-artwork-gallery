@@ -33,6 +33,7 @@ export default function Gallery() {
         !selectedArtwork && <div className="container mx-auto px-4 grid md:grid-cols-3 xl:grid-cols-4 gap-4">
           {artworks.map((artwork) => (
             <ArtworkButton
+              key={artwork.id}
               artwork={artwork}
               setSelectedArtwork={setSelectedArtwork}
             />
