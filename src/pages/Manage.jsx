@@ -1,10 +1,12 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { HashLoader } from "react-spinners";
-import ArtworkButton from "../components/ArtworkButton";
 import ArtworkApi from "../apis/ArtworkApi";
-import { useEffect } from "react";
-import { useState } from "react";
+import ArtworkButton from "../components/ArtworkButton";
 
 export default function Manage() {
+  const navigate = useNavigate();
+
   const [artworks, setArtworks] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const [selectedArtwork, setSelectedArtwork] = useState(null);
@@ -91,6 +93,12 @@ export default function Manage() {
                 setSelectedArtwork={handleSetSelectedArtwork}
               />
             ))}
+            <button
+              className="primary-button hover:scale-105"
+              onClick={() => navigate("/manage/add")}
+            >
+              Add new artwork
+            </button>
           </div>
         )
       )}
@@ -103,7 +111,7 @@ export default function Manage() {
           <img
             className="w-full max-h-[80vh] object-contain md:w-[40vw]"
             src={imageUrl}
-            alt={selectedArtwork.name}
+            alt={selectedArtwork.title}
           />
           <div className="w-full">
             <div className="flex justify-between gap-4">
@@ -141,23 +149,23 @@ export default function Manage() {
                   Return to all artworks
                 </button>
                 <button
-                  className="primary-button border-blue-500 text-blue-500 bg-blue-900 bg-opacity-50 w-full mt-4"
+                  className="primary-button border-green-500 text-green-500 bg-green-900 bg-opacity-50 w-full mt-4"
                   onClick={() => updateSelectedArtworkInformation()}
                 >
-                  Update information
+                  Apply new changes
                 </button>
                 <button
                   className="primary-button border-red-500 text-red-500 bg-red-900 bg-opacity-50 w-full mt-4"
                   onClick={() => deleteSelectedArtwork()}
                 >
-                  Update information
+                  Delete artwork
                 </button>
               </div>
             </div>
             <div className="mt-4">
               <label>Image Url</label>
               <input
-              className="w-full"
+                className="w-full"
                 type="text"
                 value={imageUrl}
                 onChange={(e) => setImageUrl(e.target.value)}
